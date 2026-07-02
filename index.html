@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KEVA &mdash; Luxury Fragrance</title>
+  <meta name="description" content="KEVA handcrafted niche fragrances. Discover your signature scent."/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    .home-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .home-kicker::before,
+    .home-kicker::after {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+      opacity: .55;
+    }
+
+    .home-hero-copy {
+      max-width: 660px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-subtitle {
+      max-width: 560px;
+      margin: 16px auto 34px;
+      color: var(--muted, #9c9488);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--card, #191510);
+      border-top: 1px solid var(--border, rgba(201,168,76,.22));
+      border-bottom: 1px solid var(--border, rgba(201,168,76,.22));
+    }
+
+    .stat-item {
+      padding: 28px 18px;
+      text-align: center;
+      border-right: 1px solid var(--border, rgba(201,168,76,.22));
+    }
+
+    .stat-item:last-child {
+      border-right: 0;
+    }
+
+    .stat-num {
+      display: block;
+      color: var(--gold-light, #edd27b);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      color: var(--muted, #9c9488);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .collection-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: #080706;
+    }
+
+    .col-banner-item {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .col-banner-item img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .col-banner-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .col-banner-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.78), rgba(0,0,0,.12));
+    }
+
+    .col-banner-content {
+      position: relative;
+      z-index: 1;
+      padding: 38px;
+    }
+
+    .col-banner-content span {
+      display: block;
+      color: var(--gold, #c9a84c);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .col-banner-content h3 {
+      color: #fff;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(34px, 4vw, 54px);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .badge-new {
+      width: fit-content;
+      display: inline-block;
+      padding: 4px 10px;
+      border: 1px solid rgba(201,168,76,.5);
+      border-radius: 99px;
+      color: var(--gold-light, #edd27b);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .faq-section {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 64px;
+      padding: 90px 8%;
+      background: #fffaf1;
+      color: #1c1711;
+    }
+
+    .faq-left h2 {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.05;
+      margin-bottom: 26px;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      color: #1c1711;
+    }
+
+    .faq-left > p {
+      margin-bottom: 42px;
+      color: #5f5649;
+      font-size: 15px;
+    }
+
+    .faq-support p {
+      margin-bottom: 4px;
+      color: #1c1711;
+      font-size: 15px;
+    }
+
+    .faq-support span {
+      color: #766b5d;
+      font-size: 14px;
+    }
+
+    .faq-right {
+      background: #f3eadc;
+      border: 1px solid rgba(156,122,42,.16);
+      border-radius: 14px;
+      padding: 24px 44px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(156,122,42,.18);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item summary {
+      min-height: 64px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+      color: #1c1711;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      border-radius: 50%;
+      background: #dfd2bd;
+      color: #1c1711;
+      display: grid;
+      place-items: center;
+      transition: .25s ease;
+    }
+
+    .faq-item[open] summary::after {
+      content: "-";
+      background: var(--gold, #c9a84c);
+    }
+
+    .faq-item p {
+      padding: 0 42px 22px 0;
+      color: #5f5649;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .cta-band {
+      padding: 78px 8%;
+      text-align: center;
+      background: linear-gradient(135deg, #0b0a08, #1d170c, #0b0a08);
+      border-top: 1px solid rgba(201,168,76,.18);
+      border-bottom: 1px solid rgba(201,168,76,.18);
+    }
+
+    .cta-band h2 {
+      color: var(--gold-light, #edd27b);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(34px, 4vw, 58px);
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+
+    .cta-band p {
+      color: var(--muted, #9c9488);
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .stats-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat-item:nth-child(1),
+      .stat-item:nth-child(2) {
+        border-bottom: 1px solid var(--border, rgba(201,168,76,.22));
+      }
+
+      .collection-banner,
+      .faq-section {
+        grid-template-columns: 1fr;
+      }
+
+      .col-banner-item {
+        min-height: 320px;
+      }
+
+      .faq-section {
+        gap: 32px;
+        padding: 64px 5%;
+      }
+
+      .faq-right {
+        padding: 18px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">KEVA</div>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="offers-bar">
+    <div class="marquee">
+      * FREE SHIPPING ON ORDERS OVER 500 EGP &nbsp;&nbsp;&nbsp;
+      * BUY 2 GET 1 FREE &nbsp;&nbsp;&nbsp;
+      * GIFT WRAPPING AVAILABLE &nbsp;&nbsp;&nbsp;
+      * HANDCRAFTED IN EGYPT &nbsp;&nbsp;&nbsp;
+      * ORDER DIRECTLY VIA WHATSAPP &nbsp;&nbsp;&nbsp;
+      * FREE SHIPPING ON ORDERS OVER 500 EGP &nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+
+  <div class="slider">
+    <div class="slides">
+      <div class="slide active">
+        <img src="5879851735247950265.jpg" alt="KEVA Luxury Fragrance"/>
+        <div class="slide-content">
+          <h2>The Art of<br><em>Invisible Luxury</em></h2>
+          <p>Handcrafted niche fragrances for your everyday signature.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="#bestsellers" class="btn btn-gold">Shop Now</a>
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="slide2.jpg" alt="Men Collection"/>
+        <div class="slide-content">
+          <h2>For Him<br><em>Bold &amp; Intense</em></h2>
+          <p>Amber, musk, coffee, and deep woods.</p>
+          <a href="men.html" class="btn btn-gold">Explore Men</a>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="slide3.jpg" alt="Women Collection"/>
+        <div class="slide-content">
+          <h2>For Her<br><em>Soft &amp; Floral</em></h2>
+          <p>Vanilla, caramel, red fruits, and delicate musk.</p>
+          <a href="women.html" class="btn btn-gold">Explore Women</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="slider-btn prev" aria-label="Previous slide">&#8592;</button>
+    <button class="slider-btn next" aria-label="Next slide">&#8594;</button>
+
+    <div class="slider-dots">
+      <button class="slider-dot active" aria-label="Slide 1"></button>
+      <button class="slider-dot" aria-label="Slide 2"></button>
+      <button class="slider-dot" aria-label="Slide 3"></button>
+    </div>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-num">50+</span>
+      <span class="stat-label">Unique Scents</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">10K+</span>
+      <span class="stat-label">Happy Customers</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">EDP</span>
+      <span class="stat-label">Long Lasting</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">24h</span>
+      <span class="stat-label">Fast Response</span>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="home-hero-copy">
+      <span class="home-kicker">Handcrafted in Egypt</span>
+      <h1>Luxury Fragrances<br>for Every Moment</h1>
+      <p class="hero-subtitle">
+        Discover KEVA perfumes crafted for elegance, presence, and memories that stay.
+      </p>
+      <div class="hero-btns">
+        <a class="btn btn-gold" href="men.html">Shop Men</a>
+        <a class="btn btn-outline" href="women.html">Shop Women</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="collection-banner">
+    <a class="col-banner-item" href="men.html">
+      <img src="slide2.jpg" alt="Men Collection"/>
+      <div class="col-banner-content">
+        <span>Bold &amp; Intense</span>
+        <h3>Men's<br>Collection</h3>
+        <span class="btn btn-gold" style="width:fit-content;font-size:11px">Explore</span>
+      </div>
+    </a>
+
+    <a class="col-banner-item" href="women.html">
+      <img src="slide3.jpg" alt="Women Collection"/>
+      <div class="col-banner-content">
+        <span>Soft &amp; Floral</span>
+        <h3>Women's<br>Collection</h3>
+        <span class="btn btn-gold" style="width:fit-content;font-size:11px">Explore</span>
+      </div>
+    </a>
+  </div>
+
+  <section class="products-page" id="bestsellers">
+    <p class="section-eyebrow" style="text-align:center">Most Loved</p>
+    <h2 class="page-title">Best Sellers</h2>
+    <div class="section-divider"></div>
+
+    <div class="products-grid">
+
+      <div class="product-card" data-price="360" data-prices='{"30ml":360,"50ml":500,"100ml":850}'>
+        <img src="photo men/Elixir.jpg" alt="Elixir"/>
+        <div class="card-body">
+          <span class="badge-new">Men's Pick</span>
+          <h3>Elixir</h3>
+          <p>Powerful woody and amber fragrance.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">360 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-price="350" data-prices='{"30ml":350,"50ml":500,"100ml":850}'>
+        <img src="photo/Asia.jpg" alt="Asia"/>
+        <div class="card-body">
+          <span class="badge-new">Women's Pick</span>
+          <h3>Asia</h3>
+          <p>Fresh fruity floral fragrance.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">350 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-price="450" data-prices='{"30ml":450,"50ml":650,"100ml":1100}'>
+        <img src="photo men/Kofian.jpg" alt="Kofian"/>
+        <div class="card-body">
+          <span class="badge-new">Best Seller</span>
+          <h3>Kofian</h3>
+          <p>Coffee, vanilla and musk blend.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">450 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-price="450" data-prices='{"30ml":450,"50ml":650,"100ml":1100}'>
+        <img src="photo/Miss Gold.jpg" alt="Miss Gold"/>
+        <div class="card-body">
+          <span class="badge-new">Women's Pick</span>
+          <h3>Miss Gold</h3>
+          <p>Luxury fruity caramel scent.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">450 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="why-keva">
+    <p class="section-eyebrow">Our Promise</p>
+    <h2 class="page-title">Why Choose KEVA?</h2>
+    <div class="section-divider"></div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">*</div>
+        <h3>Premium Quality</h3>
+        <p>Carefully selected oils and refined blends made for a luxury experience.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">*</div>
+        <h3>Long Lasting</h3>
+        <p>EDP concentrations designed to stay noticeable for hours.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">*</div>
+        <h3>Perfect Gift</h3>
+        <p>Elegant scents and packaging for birthdays, events, and daily moments.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="faq-left">
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before ordering from KEVA.</p>
+
+      <div class="faq-support">
+        <p>Customer support available Monday to Friday: 8am-8:30pm.</p>
+        <span>Average reply time: 6 hours</span>
+      </div>
+    </div>
+
+    <div class="faq-right">
+      <details class="faq-item">
+        <summary>How do I place an order?</summary>
+        <p>Click Order Now on any product, choose size and quantity, fill your name and phone, then the order will open directly in WhatsApp.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is your shipping policy?</summary>
+        <p>Orders are prepared within 24-48 hours. Delivery time depends on your city and courier availability.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How long do KEVA fragrances last?</summary>
+        <p>Longevity depends on skin type and weather, but most KEVA fragrances are designed to last for hours.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I choose different sizes?</summary>
+        <p>Yes. Every product has 30ml, 50ml, and 100ml options with different prices.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Find Your Signature Scent</h2>
+    <p>Choose your fragrance, send your order through WhatsApp, and we will confirm the details.</p>
+
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="men.html" class="btn btn-gold">Shop Men</a>
+      <a href="women.html" class="btn btn-outline">Shop Women</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">KEVA</div>
+        <p>Luxury fragrances crafted for memorable everyday moments. Handcrafted in Egypt.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="#bestsellers">Best Sellers</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="contact.html">Contact</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://wa.me/201096169882" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <div class="social-links">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm5.5-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+            </svg>
+          </a>
+
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16.7 2c.4 3 2.1 4.9 5.3 5.1v4.1a9 9 0 0 1-5.2-1.7v6.7c0 3.4-2.3 5.8-5.8 5.8A5.8 5.8 0 0 1 5 16.2c0-3.5 2.7-6 6.4-5.8v4.2c-1.5-.3-2.5.4-2.5 1.6 0 1 .8 1.8 1.9 1.8 1.3 0 2-.8 2-2.3V2h3.9z"/>
+            </svg>
+          </a>
+
+          <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 8h3V4h-3c-3.1 0-5 1.9-5 5v2H6v4h3v7h4v-7h3.2l.8-4h-4V9c0-.7.3-1 1-1z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 KEVA Luxury Fragrance. All Rights Reserved.</p>
+      <span>Made with elegance in Egypt</span>
+    </div>
+  </footer>
+
+  <a class="whatsapp-btn" href="https://wa.me/201096169882" target="_blank" rel="noopener">
+    Order on WhatsApp
+  </a>
+
+  <div class="order-modal-backdrop" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="omTitle">
+    <div class="order-modal">
+      <div class="order-modal-header">
+        <h3 id="omTitle">Complete Your Order</h3>
+        <button class="order-modal-close" onclick="closeOrderModal()" aria-label="Close">x</button>
+      </div>
+
+      <div class="order-modal-body">
+        <div class="order-product-preview">
+          <div>
+            <strong id="omProductName"></strong>
+            <span id="omProductMeta"></span>
+          </div>
+        </div>
+
+        <div class="order-form-group">
+          <label for="omSizeSelect">Size</label>
+          <select class="order-input" id="omSizeSelect"></select>
+        </div>
+
+        <div class="order-form-group">
+          <label>Quantity</label>
+          <div class="qty-control">
+            <button type="button" class="qty-btn" onclick="changeModalQty(-1)">-</button>
+            <span class="qty-value" id="omQtyValue">1</span>
+            <button type="button" class="qty-btn" onclick="changeModalQty(1)">+</button>
+          </div>
+        </div>
+
+        <div class="order-form-row">
+          <div class="order-form-group" style="margin-bottom:0">
+            <label for="omName">Your Name *</label>
+            <input class="order-input" id="omName" type="text" placeholder="e.g. Ahmed Mohamed" autocomplete="name"/>
+          </div>
+
+          <div class="order-form-group" style="margin-bottom:0">
+            <label for="omPhone">Phone Number *</label>
+            <input class="order-input" id="omPhone" type="tel" placeholder="01xxxxxxxxx" autocomplete="tel"/>
+          </div>
+        </div>
+
+        <div class="order-form-group" style="margin-top:14px">
+          <label for="omNotes">Notes (optional)</label>
+          <textarea class="order-input" id="omNotes" rows="2" placeholder="Address, delivery preferences..."></textarea>
+        </div>
+
+        <div class="order-total-line">
+          <span class="label">Order Total</span>
+          <span class="amount"><span id="omTotal">0</span> EGP</span>
+        </div>
+
+        <button class="order-submit-btn" onclick="submitOrder()">
+          Send Order via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

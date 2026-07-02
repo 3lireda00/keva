@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Women Collection &mdash; KEVA</title>
+  <meta name="description" content="KEVA Women Collection. Soft, floral, and enchanting fragrances."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="women-page">
+
+  <header>
+    <div class="logo">KEVA</div>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="men.html">Men</a>
+      <a href="women.html" class="active">Women</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <span class="section-eyebrow">Soft &amp; Floral</span>
+    <h1 class="page-title" style="margin-bottom:0">Women Collection</h1>
+  </div>
+
+  <section class="products-page">
+    <div class="products-grid">
+
+      <div class="product-card" data-price="350" data-prices='{"30ml":350,"50ml":500,"100ml":850}'>
+        <img src="photo/Asia.jpg" alt="Asia"/>
+        <div class="card-body">
+          <h3>Asia</h3>
+          <p>Fresh fruity floral fragrance.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">350 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-price="390" data-prices='{"30ml":390,"50ml":550,"100ml":920}'>
+        <img src="photo/Caramel Mush.jpg" alt="Caramel Mush"/>
+        <div class="card-body">
+          <h3>Caramel Mush</h3>
+          <p>Sweet caramel warm scent.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">390 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-price="420" data-prices='{"30ml":420,"50ml":600,"100ml":990}'>
+        <img src="photo/La Belle.jpg" alt="La Belle"/>
+        <div class="card-body">
+          <h3>La Belle</h3>
+          <p>Vanilla and caramel notes.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">420 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-price="360" data-prices='{"30ml":360,"50ml":500,"100ml":850}'>
+        <img src="photo/Latte Veil.jpg" alt="Latte Veil"/>
+        <div class="card-body">
+          <h3>Latte Veil</h3>
+          <p>Soft honey woody perfume.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">360 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-price="320" data-prices='{"30ml":320,"50ml":450,"100ml":760}'>
+        <img src="photo/Marshmallow.jpg" alt="Marshmallow"/>
+        <div class="card-body">
+          <h3>Marshmallow</h3>
+          <p>Sweet musk fragrance.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">320 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-price="450" data-prices='{"30ml":450,"50ml":650,"100ml":1100}'>
+        <img src="photo/Miss Gold.jpg" alt="Miss Gold"/>
+        <div class="card-body">
+          <h3>Miss Gold</h3>
+          <p>Luxury fruity caramel scent.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">450 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-price="390" data-prices='{"30ml":390,"50ml":550,"100ml":920}'>
+        <img src="photo/Mush Red.jpg" alt="Mush Red"/>
+        <div class="card-body">
+          <h3>Mush Red</h3>
+          <p>Red fruits floral perfume.</p>
+
+          <div class="card-size-row">
+            <label>Size</label>
+            <select aria-label="Size">
+              <option value="30ml">30ml</option>
+              <option value="50ml">50ml</option>
+              <option value="100ml">100ml</option>
+            </select>
+          </div>
+
+          <div class="qty-box">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">390 <small>EGP</small></div>
+            <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">KEVA</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 KEVA Luxury Fragrance. All Rights Reserved.</p>
+  </footer>
+
+  <a class="whatsapp-btn" href="https://wa.me/201096169882" target="_blank" rel="noopener">
+    Order on WhatsApp
+  </a>
+
+  <div class="order-modal-backdrop" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="omTitle">
+    <div class="order-modal">
+      <div class="order-modal-header">
+        <h3 id="omTitle">Complete Your Order</h3>
+        <button class="order-modal-close" onclick="closeOrderModal()" aria-label="Close">x</button>
+      </div>
+
+      <div class="order-modal-body">
+        <div class="order-product-preview">
+          <div>
+            <strong id="omProductName"></strong>
+            <span id="omProductMeta"></span>
+          </div>
+        </div>
+
+        <div class="order-form-group">
+          <label for="omSizeSelect">Size</label>
+          <select class="order-input" id="omSizeSelect"></select>
+        </div>
+
+        <div class="order-form-group">
+          <label>Quantity</label>
+          <div class="qty-control">
+            <button type="button" class="qty-btn" onclick="changeModalQty(-1)">-</button>
+            <span class="qty-value" id="omQtyValue">1</span>
+            <button type="button" class="qty-btn" onclick="changeModalQty(1)">+</button>
+          </div>
+        </div>
+
+        <div class="order-form-row">
+          <div class="order-form-group" style="margin-bottom:0">
+            <label for="omName">Your Name *</label>
+            <input class="order-input" id="omName" type="text" placeholder="e.g. Sara Ahmed" autocomplete="name"/>
+          </div>
+          <div class="order-form-group" style="margin-bottom:0">
+            <label for="omPhone">Phone Number *</label>
+            <input class="order-input" id="omPhone" type="tel" placeholder="01xxxxxxxxx" autocomplete="tel"/>
+          </div>
+        </div>
+
+        <div class="order-form-group" style="margin-top:14px">
+          <label for="omNotes">Notes (optional)</label>
+          <textarea class="order-input" id="omNotes" rows="2" placeholder="Address, delivery preferences..."></textarea>
+        </div>
+
+        <div class="order-total-line">
+          <span class="label">Order Total</span>
+          <span class="amount"><span id="omTotal">0</span> EGP</span>
+        </div>
+
+        <button class="order-submit-btn" onclick="submitOrder()">
+          Send Order via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
