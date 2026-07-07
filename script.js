@@ -336,3 +336,13 @@ document.addEventListener('keydown', e => {
 
 initProductPrices();
 updateCartCount();
+function scrollFeedback(direction) {
+  const track = document.getElementById('feedbackTrack');
+  if (!track) return;
+
+  const amount = track.clientWidth * 0.85;
+  track.scrollBy({
+    left: amount * direction,
+    behavior: 'smooth'
+  });
+}

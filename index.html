@@ -323,14 +323,14 @@
       * GIFT WRAPPING AVAILABLE &nbsp;&nbsp;&nbsp;
       * HANDCRAFTED IN EGYPT &nbsp;&nbsp;&nbsp;
       * ORDER DIRECTLY VIA WHATSAPP &nbsp;&nbsp;&nbsp;
-      * FREE SHIPPING ON ORDERS OVER 500 EGP &nbsp;&nbsp;&nbsp;
+      
     </div>
   </div>
 
   <div class="slider">
     <div class="slides">
       <div class="slide active">
-        <img src="5879851735247950265.jpg" alt="KEVA Luxury Fragrance"/>
+        <img src="silde1.jpg" alt="KEVA Luxury Fragrance"/>
         <div class="slide-content">
           <h2>The Art of<br><em>Invisible Luxury</em></h2>
           <p>Handcrafted niche fragrances for your everyday signature.</p>
@@ -342,7 +342,7 @@
       </div>
 
       <div class="slide">
-        <img src="slide2.jpg" alt="Men Collection"/>
+        <img src="slide2.png" alt="Men Collection"/>
         <div class="slide-content">
           <h2>For Him<br><em>Bold &amp; Intense</em></h2>
           <p>Amber, musk, coffee, and deep woods.</p>
@@ -351,7 +351,7 @@
       </div>
 
       <div class="slide">
-        <img src="slide3.jpg" alt="Women Collection"/>
+        <img src="slide3.png" alt="Women Collection"/>
         <div class="slide-content">
           <h2>For Her<br><em>Soft &amp; Floral</em></h2>
           <p>Vanilla, caramel, red fruits, and delicate musk.</p>
@@ -403,32 +403,108 @@
     </div>
   </section>
 
-  <div class="collection-banner">
-    <a class="col-banner-item" href="men.html">
-      <img src="slide2.jpg" alt="Men Collection"/>
-      <div class="col-banner-content">
-        <span>Bold &amp; Intense</span>
-        <h3>Men's<br>Collection</h3>
-        <span class="btn btn-gold" style="width:fit-content;font-size:11px">Explore</span>
-      </div>
-    </a>
-
-    <a class="col-banner-item" href="women.html">
-      <img src="slide3.jpg" alt="Women Collection"/>
-      <div class="col-banner-content">
-        <span>Soft &amp; Floral</span>
-        <h3>Women's<br>Collection</h3>
-        <span class="btn btn-gold" style="width:fit-content;font-size:11px">Explore</span>
-      </div>
-    </a>
-  </div>
-
+  
   <section class="products-page" id="bestsellers">
     <p class="section-eyebrow" style="text-align:center">Most Loved</p>
     <h2 class="page-title">Best Sellers</h2>
     <div class="section-divider"></div>
 
     <div class="products-grid">
+      <div class="product-card" data-price="390" data-prices='{"30ml":390,"50ml":580,"100ml":980}'>
+  <img src="photo men/LUANA DORÉE.png" alt="Luana Dorée"/>
+  <div class="card-body">
+    <span class="badge-new">New</span>
+    <h3>Luana Dorée</h3>
+    <p>Fresh floral citrus fragrance with bergamot, mandarin, jasmine and soft sandalwood.</p>
+
+    <div class="card-size-row">
+      <label>Size</label>
+      <select aria-label="Size">
+        <option value="30ml">30ml</option>
+        <option value="50ml">50ml</option>
+        <option value="100ml">100ml</option>
+      </select>
+    </div>
+
+    <div class="qty-box">
+      <label>Quantity</label>
+      <div class="qty-control">
+        <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+        <span class="qty-value">1</span>
+        <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="price">390 <small>EGP</small></div>
+      <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+    </div>
+  </div>
+</div>
+
+<div class="product-card" data-price="470" data-prices='{"30ml":470,"50ml":690,"100ml":1180}'>
+  <img src="photo men/OUD MAJESTY.png" alt="Oud Majesty"/>
+  <div class="card-body">
+    <span class="badge-new">Best Seller</span>
+    <h3>Oud Majesty</h3>
+    <p>Mysterious warm oud fragrance with rose, fruity notes, musk, amber and woods.</p>
+
+    <div class="card-size-row">
+      <label>Size</label>
+      <select aria-label="Size">
+        <option value="30ml">30ml</option>
+        <option value="50ml">50ml</option>
+        <option value="100ml">100ml</option>
+      </select>
+    </div>
+
+    <div class="qty-box">
+      <label>Quantity</label>
+      <div class="qty-control">
+        <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+        <span class="qty-value">1</span>
+        <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="price">470 <small>EGP</small></div>
+      <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+    </div>
+  </div>
+</div>
+
+<div class="product-card" data-price="390" data-prices='{"30ml":390,"50ml":550,"100ml":920}'>
+  <img src="photo/Mush Red.jpg" alt="Mush Red"/>
+  <div class="card-body">
+    <span class="badge-new">Women</span>
+    <h3>Mush Red</h3>
+    <p>Red fruits floral perfume with an elegant warm feminine trail.</p>
+
+    <div class="card-size-row">
+      <label>Size</label>
+      <select aria-label="Size">
+        <option value="30ml">30ml</option>
+        <option value="50ml">50ml</option>
+        <option value="100ml">100ml</option>
+      </select>
+    </div>
+
+    <div class="qty-box">
+      <label>Quantity</label>
+      <div class="qty-control">
+        <button type="button" class="qty-btn" onclick="changeQty(this, -1)">-</button>
+        <span class="qty-value">1</span>
+        <button type="button" class="qty-btn" onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="price">390 <small>EGP</small></div>
+      <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+    </div>
+  </div>
+</div>
 
       <div class="product-card" data-price="360" data-prices='{"30ml":360,"50ml":500,"100ml":850}'>
         <img src="photo men/Elixir.jpg" alt="Elixir"/>
@@ -586,16 +662,51 @@
       </div>
     </div>
   </section>
+<section class="real-feedback" id="feedback">
+ 
 
+ <section class="feedback-gallery" id="feedback">
+  <div class="feedback-gallery-head">
+    <span class="section-eyebrow">Real Feedback</span>
+    <h2>Customers Feedback</h2>
+  </div>
+
+  <div class="feedback-gallery-grid">
+    <div class="feedback-shot">
+      <img src="/reviews/review1.jpg" alt="Customer feedback">
+    </div>
+
+    <div class="feedback-shot">
+      <img src="/reviews/review2.jpg" alt="Customer feedback">
+    </div>
+
+    <div class="feedback-shot">
+      <img src="reviews/review3.jpg" alt="Customer feedback">
+    </div>
+
+    <div class="feedback-shot">
+      <img src="reviews/review4.jpg" alt="Customer feedback">
+    </div>
+    <div class="feedback-shot">
+      <img src="reviews/review5.jpeg" alt="Customer feedback">
+    </div>
+    <div class="feedback-shot">
+      <img src="reviews/review6.jpeg" alt="Customer feedback">
+    </div>
+    <div class="feedback-shot">
+      <img src="reviews/review7.jpeg" alt="Customer feedback">
+    </div>
+    <div class="feedback-shot">
+      <img src="reviews/review8.jpeg" alt="Customer feedback">
+    </div>
+    
+  </div>
+</section>
   <section class="faq-section" id="faq">
     <div class="faq-left">
       <h2>Frequently Asked Questions</h2>
       <p>Everything you need to know before ordering from KEVA.</p>
 
-      <div class="faq-support">
-        <p>Customer support available Monday to Friday: 8am-8:30pm.</p>
-        <span>Average reply time: 6 hours</span>
-      </div>
     </div>
 
     <div class="faq-right">
@@ -621,15 +732,6 @@
     </div>
   </section>
 
-  <section class="cta-band">
-    <h2>Find Your Signature Scent</h2>
-    <p>Choose your fragrance, send your order through WhatsApp, and we will confirm the details.</p>
-
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-      <a href="men.html" class="btn btn-gold">Shop Men</a>
-      <a href="women.html" class="btn btn-outline">Shop Women</a>
-    </div>
-  </section>
 
   <footer class="site-footer">
     <div class="footer-main">
