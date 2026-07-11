@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cart — KEVA</title>
+  <title>My Order &mdash; KEVA</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
     .cart-table-wrap {
@@ -172,21 +172,21 @@
       <a href="index.html">Home</a>
       <a href="men.html">Men</a>
       <a href="women.html">Women</a>
-      <a href="cart.html" class="active">Cart (<span id="cart-count">0</span>)</a>
+      <a href="cart.html" class="active">My Order (<span id="cart-count">0</span>)</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <div class="page-header">
     <span class="section-eyebrow">Your Selection</span>
-    <h1 class="page-title" style="margin-bottom:0">Shopping Cart</h1>
+    <h1 class="page-title" style="margin-bottom:0">My Order</h1>
   </div>
 
   <section class="products-page">
 
     <!-- Empty state -->
     <div class="cart-empty" id="cartEmpty" style="display:none">
-      <span class="cart-empty-icon">🛒</span>
+      <span class="cart-empty-icon">ðŸ›’</span>
       <h2>Your cart is empty</h2>
       <p>You haven't added any fragrances yet. Explore our collections and find your signature scent.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -240,7 +240,7 @@
         </div>
 
         <div class="summary-note" id="free-shipping-note" style="display:none">
-          ✓ You qualify for free shipping!
+          âœ“ You qualify for free shipping!
         </div>
 
         <button class="checkout-btn" onclick="checkout()">
@@ -264,7 +264,7 @@
       <a href="index.html">Home</a>
       <a href="men.html">Men</a>
       <a href="women.html">Women</a>
-      <a href="cart.html">Cart</a>
+      <a href="cart.html">My Order</a>
       <a href="contact.html">Contact</a>
     </div>
     <p class="footer-copy">&copy; 2026 KEVA Luxury Fragrance. All Rights Reserved.</p>
@@ -313,7 +313,7 @@
           </td>
           <td><span style="color:var(--text-mid);font-size:13px">${item.size}</span></td>
           <td><span style="color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:20px">${item.price.toLocaleString()} EGP</span></td>
-          <td><button class="remove-btn" onclick="removeItem(${i})">✕ Remove</button></td>`;
+          <td><button class="remove-btn" onclick="removeItem(${i})">âœ• Remove</button></td>`;
         tbody.appendChild(tr);
       });
 
@@ -336,5 +336,26 @@
 
     renderCart();
   </script>
+  <script>
+    (function initCartHamburger() {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('nav');
+      if (!toggle || !nav) return;
+
+      toggle.addEventListener('click', function (event) {
+        event.stopPropagation();
+        const open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!event.target.closest('header')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
+

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -301,6 +301,13 @@
 </head>
 
 <body>
+  <div class="luxury-loader" aria-hidden="true">
+    <div class="loader-mark">
+      <span class="loader-eye"></span>
+      <strong class="loader-logo">KÉVA</strong>
+      <span class="loader-tagline">Luxury Fragrance</span>
+    </div>
+  </div>
 
   <header>
     <div class="logo">KEVA</div>
@@ -311,7 +318,7 @@
       <a href="index.html" class="active">Home</a>
       <a href="men.html">Men</a>
       <a href="women.html">Women</a>
-      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <a href="cart.html">My Order (<span id="cart-count">0</span>)</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -411,10 +418,10 @@
 
     <div class="products-grid">
       <div class="product-card" data-price="390" data-prices='{"30ml":390,"50ml":580,"100ml":980}'>
-  <img src="photo men/LUANA DORÉE.png" alt="Luana Dorée"/>
+  <img src="photo men/LUANA DORÃ‰E.png" alt="Luana DorÃ©e"/>
   <div class="card-body">
     <span class="badge-new">New</span>
-    <h3>Luana Dorée</h3>
+    <h3>Luana DorÃ©e</h3>
     <p>Fresh floral citrus fragrance with bergamot, mandarin, jasmine and soft sandalwood.</p>
 
     <div class="card-size-row">
@@ -431,6 +438,7 @@
     <div class="card-footer">
       <div class="price">390 <small>EGP</small></div>
       <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+              <button class="bulk-order-btn" onclick="addToBulkOrder(this)">Add to My Order</button>
     </div>
   </div>
 </div>
@@ -456,6 +464,7 @@
     <div class="card-footer">
       <div class="price">470 <small>EGP</small></div>
       <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+              <button class="bulk-order-btn" onclick="addToBulkOrder(this)">Add to My Order</button>
     </div>
   </div>
 </div>
@@ -481,6 +490,7 @@
     <div class="card-footer">
       <div class="price">390 <small>EGP</small></div>
       <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+              <button class="bulk-order-btn" onclick="addToBulkOrder(this)">Add to My Order</button>
     </div>
   </div>
 </div>
@@ -506,6 +516,7 @@
           <div class="card-footer">
             <div class="price">360 <small>EGP</small></div>
             <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+              <button class="bulk-order-btn" onclick="addToBulkOrder(this)">Add to My Order</button>
           </div>
         </div>
       </div>
@@ -531,6 +542,7 @@
           <div class="card-footer">
             <div class="price">350 <small>EGP</small></div>
             <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+              <button class="bulk-order-btn" onclick="addToBulkOrder(this)">Add to My Order</button>
           </div>
         </div>
       </div>
@@ -556,6 +568,7 @@
           <div class="card-footer">
             <div class="price">450 <small>EGP</small></div>
             <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+              <button class="bulk-order-btn" onclick="addToBulkOrder(this)">Add to My Order</button>
           </div>
         </div>
       </div>
@@ -581,6 +594,7 @@
           <div class="card-footer">
             <div class="price">450 <small>EGP</small></div>
             <button class="add-btn" onclick="openOrderModal(this)">Order Now</button>
+              <button class="bulk-order-btn" onclick="addToBulkOrder(this)">Add to My Order</button>
           </div>
         </div>
       </div>
@@ -800,3 +814,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+

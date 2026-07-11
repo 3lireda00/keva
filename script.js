@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const $ = id => document.getElementById(id);
 const $$ = sel => document.querySelectorAll(sel);
@@ -7,6 +7,10 @@ const WHATSAPP_NUMBER = '201096169882';
 
 function getCart() {
   return JSON.parse(localStorage.getItem('keva_cart') || '[]');
+}
+
+function saveCart(cart) {
+  localStorage.setItem('keva_cart', JSON.stringify(cart));
 }
 
 function updateCartCount() {
@@ -237,6 +241,25 @@ Sent from KEVA Website`;
 function addToCart(button) {
   openOrderModal(button);
 }
+function addToBulkOrder(button) {
+  const card = button.closest('.product-card');
+  if (!card) return;
+
+  const productName = card.querySelector('h3')?.innerText.trim() || 'KEVA Perfume';
+  const select = card.querySelector('select');
+  const qtyEl = card.querySelector('.qty-value');
+
+  const size = select ? select.value : '50ml';
+  const quantity = qtyEl ? Number(qtyEl.textContent) || 1 : 1;
+  const unitPrice = getSelectedPrice(card);
+  const price = unitPrice * quantity;
+
+  const cart = getCart();
+  cart.push({ name: productName, size, quantity, unitPrice, price });
+  saveCart(cart);
+  updateCartCount();
+  showToast(`${productName} added to My Order`);
+}
 
 (function markActiveLink() {
   const path = location.pathname.split('/').pop() || 'index.html';
@@ -346,3 +369,56 @@ function scrollFeedback(direction) {
     behavior: 'smooth'
   });
 }
+// KEVA Luxury Motion Pack
+(function initKevaLuxuryMotion() {
+  document.body.classList.add('is-loading');
+
+  const loader = document.querySelector('.luxury-loader');
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      if (loader) loader.classList.add('hide');
+      document.body.classList.remove('is-loading');
+    }, 2400);
+  });
+
+  const revealTargets = document.querySelectorAll('.product-card, .feature, .feedback-shot, .faq-item, .fragrance-notes, .notes-list');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+  revealTargets.forEach((el, index) => {
+    el.style.animationDelay = `${Math.min(index % 6, 5) * 70}ms`;
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.product-card h3').forEach((title) => {
+    if (title.dataset.animated === 'true') return;
+    const text = title.textContent.trim();
+    title.dataset.plain = text;
+    title.dataset.animated = 'true';
+    title.innerHTML = text.split('').map((char, index) => {
+      const safe = char === ' ' ? '&nbsp;' : char;
+      return `<span class="char" style="--i:${index}">${safe}</span>`;
+    }).join('');
+  });
+
+  document.querySelectorAll('.fragrance-note, .notes-list li').forEach((item, index) => {
+    item.style.setProperty('--i', index % 8);
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      document.documentElement.style.setProperty('--keva-parallax', `${window.scrollY * -0.035}px`);
+      ticking = false;
+    });
+  }, { passive: true });
+})();
+

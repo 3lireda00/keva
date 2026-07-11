@@ -1,6 +1,6 @@
-/* ══════════════════════════════════════════════
-   KEVA — cart.js
-   ══════════════════════════════════════════════ */
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   KEVA â€” cart.js
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 'use strict';
 
@@ -57,15 +57,15 @@ function renderCart() {
   tbody.innerHTML = '';
 
   cart.forEach((item, i) => {
-    sum += item.price;
+    sum += Number(item.price) || 0;
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>
         <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-size">${item.size}</div>
+        <div class="cart-item-size">${item.size} x ${item.quantity || 1}</div>
       </td>
-      <td>${item.size}</td>
-      <td><span style="color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:18px">${item.price.toLocaleString()} EGP</span></td>
+      <td>${item.size} x ${item.quantity || 1}</td>
+      <td><span style="color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:18px">${Number(item.price || 0).toLocaleString()} EGP</span></td>
       <td>
         <button class="remove-btn" onclick="removeItem(${i})">Remove</button>
       </td>`;
@@ -75,18 +75,18 @@ function renderCart() {
   totalEl.textContent = sum.toLocaleString();
 }
 
-// Checkout — sends to WhatsApp (replace number with your own)
+// Checkout â€” sends to WhatsApp (replace number with your own)
 function checkout() {
   const cart = getCart();
   if (!cart.length) return;
 
   const lines = cart.map((item, i) =>
-    `${i + 1}. ${item.name} — ${item.size} — ${item.price} EGP`
+    `${i + 1}. ${item.name} - ${item.size} x ${item.quantity || 1} - ${Number(item.price || 0).toLocaleString()} EGP`
   ).join('\n');
 
   const total = cart.reduce((s, i) => s + i.price, 0);
   const msg   = encodeURIComponent(`*KEVA Order*\n\n${lines}\n\n*Total: ${total.toLocaleString()} EGP*`);
-  window.open(`https://wa.me/01067571850?text=${msg}`, '_blank');
+  window.open(`https://wa.me/201096169882?text=${msg}`, '_blank');
 }
 
 renderCart();
