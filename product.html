@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product - KEVA</title>
+  <meta name="description" content="KEVA perfume product details."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="product-detail-body">
+
+  <!-- ============================= HEADER ============================= -->
+  <header>
+    <div class="logo">KEVA</div>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+      <a href="cart.html">My Order (<span id="cart-count">0</span>)</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ======================= SINGLE PRODUCT PAGE ======================= -->
+  <main class="single-product-page" id="productDetailPage">
+
+    <!-- ---- Product image / gallery ---- -->
+    <section class="single-product-gallery">
+      <button class="product-zoom-btn" type="button" aria-label="Zoom product image">+</button>
+      <img id="productHeroImage" class="single-product-image" src="" alt="KEVA Perfume"/>
+    </section>
+
+    <!-- ---- Product info panel ---- -->
+    <section class="single-product-info">
+
+      <!-- Thumbnails -->
+      <div class="single-thumbs">
+        <button class="single-thumb active" type="button">
+          <img id="productThumbMain" src="" alt="Product thumbnail"/>
+        </button>
+        <button class="single-thumb notes-thumb" type="button" aria-label="Fragrance notes">Notes</button>
+      </div>
+
+      <!-- Title, collection tag, price, rating -->
+      <p id="productCollection" class="single-product-kicker"></p>
+
+      <div class="single-title-row">
+        <div>
+          <h1 id="productTitle">KEVA Perfume</h1>
+          <p class="single-price"><span id="productPrice">0</span>.00</p>
+        </div>
+        <div class="single-rating">
+          <span id="productRating">4.8</span> <span>★</span>
+        </div>
+      </div>
+
+      <div class="single-divider"></div>
+
+      <!-- Promo banner -->
+      <div class="single-offer">
+        <div class="offer-icon">◇</div>
+        <div>
+          <strong>BUY 2 GET 1</strong>
+          <p>Celebrating our anniversary offer</p>
+          <p>Limited Time</p>
+        </div>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="single-benefits">
+        <div><span>🇫🇷</span><strong>100% Egyptian Crafted</strong></div>
+        <div><span>🌿</span><strong>Luxury Without the Price</strong></div>
+        <div><span>⚡</span><strong>12+ Hours Longevity</strong></div>
+      </div>
+
+      <!-- Size selector -->
+      <label class="single-field-label" for="productSize">Size:</label>
+      <select id="productSize" class="single-size-select"></select>
+
+      <!-- Quantity stepper -->
+      <label class="single-field-label">Quantity:</label>
+      <div class="single-qty">
+        <button type="button" onclick="changeProductPageQty(-1)">−</button>
+        <span id="productQty">1</span>
+        <button type="button" onclick="changeProductPageQty(1)">+</button>
+      </div>
+
+      <!-- Order total -->
+      <div class="single-total">
+        Total: <strong><span id="productTotal">0</span> EGP</strong>
+      </div>
+
+      <!-- Actions -->
+      
+      <button class="single-whatsapp-btn" type="button" onclick="orderProductPageWhatsApp()">Order now</button>
+
+      <!-- Fragrance notes -->
+      <section class="single-notes-block">
+        <p><strong>Top:</strong> The first notes you smell<br><span id="productTop"></span></p>
+        <p><strong>Middle:</strong> The heart of the perfume<br><span id="productMiddle"></span></p>
+        <p><strong>Base:</strong> The notes that linger all day<br><span id="productBase"></span></p>
+        <p><strong>Ingredients:</strong> <span id="productIngredients"></span></p>
+        <p><strong>This perfume is:</strong> <span id="productMood"></span></p>
+        <p><strong>Inspired By:</strong> <span id="productInspired"></span></p>
+      </section>
+
+      <!-- Description -->
+      <details class="single-description" open>
+        <summary>Description</summary>
+        <p id="productDescription"></p>
+      </details>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
