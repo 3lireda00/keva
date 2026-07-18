@@ -3752,3 +3752,548 @@ body.product-detail-body .nav-toggle span {
     font-size: 22px !important;
   }
 }
+
+/* KEVA final responsive audit layer */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .hero,
+  .products-page,
+  .why-keva,
+  .feedback-gallery,
+  .faq-section,
+  .contact-section {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+
+  .page-title,
+  .hero h1,
+  .feedback-gallery-head h2 {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-inline: 5% !important;
+  }
+
+  nav {
+    left: 5% !important;
+    right: 5% !important;
+    width: auto !important;
+    max-height: calc(100vh - var(--nav-h, 70px) - 18px);
+    overflow-y: auto;
+    border-radius: 0 0 16px 16px;
+  }
+
+  nav a {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+  }
+
+  .slider,
+  .slide,
+  .slide img {
+    min-height: 430px;
+  }
+
+  .slide img {
+    object-position: center center;
+  }
+
+  .slide-content {
+    left: 5% !important;
+    right: 5% !important;
+    bottom: 128px !important;
+  }
+
+  .slider-dots {
+    bottom: 28px !important;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .product-card {
+    min-width: 0;
+    border-radius: 14px !important;
+  }
+
+  .product-card img {
+    aspect-ratio: 1 / 1.05 !important;
+    object-fit: cover !important;
+  }
+
+  .card-body {
+    padding: 11px !important;
+    gap: 7px !important;
+  }
+
+  .product-card h3 {
+    font-size: clamp(16px, 4.8vw, 21px) !important;
+    line-height: 1.05 !important;
+  }
+
+  .product-card p {
+    font-size: clamp(10px, 3vw, 12px) !important;
+    line-height: 1.45 !important;
+    min-height: 38px;
+  }
+
+  .card-size-row select {
+    min-height: 36px !important;
+    font-size: 12px !important;
+  }
+
+  .price {
+    font-size: clamp(15px, 4vw, 18px) !important;
+  }
+
+  .add-btn,
+  .bulk-order-btn {
+    min-height: 34px !important;
+    padding: 8px 7px !important;
+    font-size: clamp(7.5px, 2.45vw, 10px) !important;
+    letter-spacing: .07em !important;
+    white-space: normal !important;
+    line-height: 1.25 !important;
+  }
+
+  .order-modal {
+    width: min(560px, calc(100vw - 20px)) !important;
+    max-height: calc(100vh - 20px) !important;
+  }
+
+  .order-modal-body {
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+  }
+
+  .footer-main,
+  footer {
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-bottom {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --nav-h: 62px;
+  }
+
+  .logo {
+    font-size: 26px !important;
+  }
+
+  .slider,
+  .slide,
+  .slide img {
+    height: 74vh !important;
+    min-height: 430px !important;
+    max-height: 640px;
+  }
+
+  .slide-content h2 {
+    font-size: clamp(28px, 9vw, 40px) !important;
+  }
+
+  .slide-content p {
+    max-width: 92%;
+  }
+
+  .products-page {
+    padding-top: 48px !important;
+  }
+
+  .products-grid {
+    gap: 10px !important;
+  }
+
+  .product-card p {
+    min-height: 44px;
+  }
+
+  .card-footer {
+    gap: 7px !important;
+  }
+
+  .feedback-gallery-grid {
+    grid-auto-columns: minmax(230px, 82vw) !important;
+  }
+
+  .single-product-gallery {
+    min-height: 320px !important;
+  }
+
+  .single-product-image {
+    max-height: 50vh !important;
+  }
+
+  .single-product-info {
+    padding: 24px 18px 42px !important;
+  }
+
+  .single-title-row {
+    align-items: flex-start !important;
+  }
+
+  .single-title-row h1 {
+    font-size: clamp(34px, 10vw, 44px) !important;
+  }
+
+  .single-benefits {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .single-benefits strong {
+    font-size: 12px !important;
+  }
+
+  .single-qty {
+    width: min(252px, 100%) !important;
+  }
+
+  .single-notes-block {
+    font-size: 16px !important;
+  }
+
+  .contact-form-panel {
+    padding: 22px 16px !important;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cart-table-wrap {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .products-grid {
+    gap: 8px !important;
+  }
+
+  .card-body {
+    padding: 9px !important;
+  }
+
+  .product-card h3 {
+    font-size: 15.5px !important;
+  }
+
+  .product-card p {
+    font-size: 9.6px !important;
+    min-height: 42px;
+  }
+
+  .card-size-row label,
+  .qty-box label {
+    font-size: 8px !important;
+  }
+
+  .add-btn,
+  .bulk-order-btn {
+    min-height: 32px !important;
+    font-size: 7px !important;
+  }
+
+  .slider-btn {
+    bottom: 66px !important;
+  }
+}
+
+/* KEVA product.html final polish */
+body.product-detail-body {
+  background: #fff;
+}
+
+body.product-detail-body header {
+  background: rgba(255, 255, 255, .96) !important;
+  border-bottom: 1px solid rgba(18, 18, 18, .08) !important;
+  backdrop-filter: blur(16px);
+}
+
+.single-product-page {
+  background: #fff;
+  grid-template-columns: minmax(420px, .92fr) minmax(460px, 1.08fr) !important;
+}
+
+.single-product-gallery {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(201, 154, 61, .16), transparent 34%),
+    linear-gradient(180deg, #f8efe4, #fffaf3) !important;
+}
+
+.single-product-image {
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: clamp(18px, 3vw, 42px);
+}
+
+.product-zoom-btn {
+  display: none !important;
+}
+
+.single-product-info {
+  max-width: 760px;
+  padding: clamp(34px, 5vw, 64px) clamp(28px, 5vw, 64px) 72px !important;
+}
+
+.single-thumbs {
+  margin-bottom: 24px !important;
+}
+
+.single-thumb {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e8ded0 !important;
+  border-bottom: 4px solid transparent !important;
+}
+
+.single-thumb.active {
+  border-bottom-color: #151515 !important;
+}
+
+.single-product-kicker {
+  color: #75695b !important;
+  font-size: clamp(16px, 2vw, 22px) !important;
+}
+
+.single-title-row {
+  align-items: flex-start !important;
+}
+
+.single-title-row h1 {
+  color: #121212 !important;
+  font-size: clamp(38px, 5.4vw, 68px) !important;
+  letter-spacing: 0 !important;
+}
+
+.single-price {
+  margin-top: 20px !important;
+  color: #1d1d1d !important;
+  font-weight: 500;
+}
+
+.single-rating {
+  padding-top: 10px;
+  font-weight: 800;
+}
+
+.single-offer {
+  border: 1px solid rgba(15, 181, 109, .14);
+  border-radius: 8px !important;
+}
+
+.single-benefits {
+  align-items: stretch;
+}
+
+.single-benefits div {
+  padding: 14px 10px;
+  border-radius: 12px;
+  background: #faf7f1;
+}
+
+.single-benefits span {
+  font-size: clamp(26px, 4vw, 38px) !important;
+}
+
+.single-benefits strong {
+  font-size: clamp(12px, 1.45vw, 17px) !important;
+  line-height: 1.45 !important;
+}
+
+.single-size-select {
+  border-radius: 8px;
+}
+
+.single-qty {
+  height: 58px !important;
+}
+
+.single-cart-btn,
+.single-whatsapp-btn {
+  min-height: 62px !important;
+  border-radius: 0 !important;
+  transition: transform .22s ease, filter .22s ease;
+}
+
+.single-cart-btn:hover,
+.single-whatsapp-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.single-notes-block {
+  padding-top: 6px;
+  color: #222 !important;
+}
+
+.single-notes-block span {
+  color: #373737;
+}
+
+.single-description {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+  .single-product-page {
+    display: block !important;
+    padding-top: 0 !important;
+  }
+
+  .single-product-gallery {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: var(--nav-h, 70px) !important;
+    padding: 14px 0 !important;
+  }
+
+  .single-product-image {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 56vh !important;
+    padding: 10px 0 !important;
+  }
+
+  .single-product-info {
+    max-width: none;
+    padding: 28px 22px 48px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .single-product-gallery {
+    margin-top: var(--nav-h, 62px) !important;
+    background: #fff8ef !important;
+  }
+
+  .single-product-image {
+    max-height: 46vh !important;
+  }
+
+  .single-thumbs {
+    gap: 10px !important;
+    margin-bottom: 22px !important;
+  }
+
+  .single-thumb {
+    width: 62px !important;
+    height: 62px !important;
+  }
+
+  .single-title-row {
+    display: grid !important;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+  }
+
+  .single-title-row h1 {
+    font-size: clamp(32px, 10vw, 42px) !important;
+  }
+
+  .single-price {
+    font-size: 24px !important;
+  }
+
+  .single-divider {
+    margin: 26px 0 !important;
+  }
+
+  .single-offer {
+    padding: 18px !important;
+    gap: 14px !important;
+  }
+
+  .single-offer p {
+    font-size: 14px !important;
+  }
+
+  .single-benefits {
+    gap: 8px !important;
+  }
+
+  .single-benefits div {
+    padding: 10px 6px;
+  }
+
+  .single-benefits strong {
+    font-size: 11.5px !important;
+  }
+
+  .single-field-label {
+    font-size: 16px !important;
+    margin-top: 20px !important;
+  }
+
+  .single-size-select {
+    height: 48px !important;
+  }
+
+  .single-qty {
+    width: min(252px, 100%) !important;
+    height: 52px !important;
+  }
+
+  .single-cart-btn,
+  .single-whatsapp-btn {
+    min-height: 56px !important;
+    font-size: 16px !important;
+  }
+
+  .single-notes-block {
+    margin-top: 34px !important;
+    gap: 18px !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+  }
+
+  .single-description {
+    margin-top: 32px !important;
+    padding: 20px 0 !important;
+  }
+
+  .single-description summary {
+    font-size: 18px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .single-product-info {
+    padding-inline: 16px !important;
+  }
+
+  .single-title-row h1 {
+    font-size: 30px !important;
+  }
+
+  .single-benefits strong {
+    font-size: 10.5px !important;
+  }
+}
