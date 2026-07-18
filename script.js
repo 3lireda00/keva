@@ -412,7 +412,8 @@ const PRODUCT_DETAILS = {
     inspired: 'A spicy amber masculine signature',
     ingredients: 'Alcohol Denat, Parfum, Aqua, Coumarin, Linalool, Cinnamal, Benzyl Benzoate, Eugenol, BHT',
     description: 'A bold and intense fragrance inspired by sweet spicy warmth and deep amber richness, creating a strong masculine signature with an addictive trail.'
-  }
+  },
+  'Soft fire': { image: 'photo/Soft fire.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Luxury fruity caramel scent' } 
 };
 
 
@@ -428,7 +429,10 @@ const PRODUCT_CATALOG = {
   'Oud Majesty': { image: 'photo men/OUD MAJESTY.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Mysterious oud luxury' },
   'Elixir': { image: 'photo men/Elixir.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Powerful woody amber' },
   'Ligre Noir': { image: 'photo men/Ligre Noir.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Citrus marine woods' },
-  'Kofian': { image: 'photo men/Kofian.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Coffee vanilla musk' }
+  'Kofian': { image: 'photo men/Kofian.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Coffee vanilla musk' },
+  'Soft fire': { image: 'photo/Soft fire.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Luxury fruity caramel scent' },
+  'vulcain': { image: 'photo men/Vulcain.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Spicy floral woody fragrance' }
+
 };
 function getProductName(card) {
   const title = card?.querySelector('h3');
