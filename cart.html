@@ -186,7 +186,7 @@
 
     <!-- Empty state -->
     <div class="cart-empty" id="cartEmpty" style="display:none">
-      <span class="cart-empty-icon">ðŸ›’</span>
+      <span class="cart-empty-icon">Cart</span>
       <h2>Your cart is empty</h2>
       <p>You haven't added any fragrances yet. Explore our collections and find your signature scent.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -239,8 +239,7 @@
           <span class="amount"><span id="cart-total-2">0</span> EGP</span>
         </div>
 
-        <div class="summary-note" id="free-shipping-note" style="display:none">
-          âœ“ You qualify for free shipping!
+        <div class="summary-note" id="free-shipping-note" style="display:none">          You qualify for free shipping!
         </div>
 
         <button class="checkout-btn" onclick="checkout()">
@@ -313,7 +312,7 @@
           </td>
           <td><span style="color:var(--text-mid);font-size:13px">${item.size}</span></td>
           <td><span style="color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:20px">${item.price.toLocaleString()} EGP</span></td>
-          <td><button class="remove-btn" onclick="removeItem(${i})">âœ• Remove</button></td>`;
+          <td><button class="remove-btn" onclick="removeItem(${i})">Remove</button></td>`;
         tbody.appendChild(tr);
       });
 
@@ -358,4 +357,5 @@
   </script>
 </body>
 </html>
+
 

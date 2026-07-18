@@ -1,6 +1,4 @@
-﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   KEVA â€” cart.js
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+﻿/* KEVA cart.js */
 
 'use strict';
 
@@ -75,7 +73,7 @@ function renderCart() {
   totalEl.textContent = sum.toLocaleString();
 }
 
-// Checkout â€” sends to WhatsApp (replace number with your own)
+// Checkout - sends to WhatsApp
 function checkout() {
   const cart = getCart();
   if (!cart.length) return;
@@ -86,7 +84,9 @@ function checkout() {
 
   const total = cart.reduce((s, i) => s + i.price, 0);
   const msg   = encodeURIComponent(`*KEVA Order*\n\n${lines}\n\n*Total: ${total.toLocaleString()} EGP*`);
-  window.open(`https://wa.me/201096169882?text=${msg}`, '_blank');
+  window.open(`https://wa.me/201039197703?text=${msg}`, '_blank');
 }
 
 renderCart();
+
+

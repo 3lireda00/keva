@@ -3643,3 +3643,112 @@ body.product-detail-body .nav-toggle span {
     font-size: 19px;
   }
 }
+/* KEVA final mobile fix: home slider arrows + product page images */
+@media (max-width: 768px) {
+  .slider {
+    overflow: hidden;
+  }
+
+  .slider-btn {
+    top: auto !important;
+    bottom: 82px !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: rgba(8, 7, 6, .68) !important;
+    border: 1px solid rgba(240, 207, 117, .55) !important;
+    color: var(--gold-light, #f0cf75) !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    display: grid !important;
+    place-items: center !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
+  }
+
+  .slider-btn::before {
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .slider-btn.prev {
+    left: calc(50% - 46px) !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  .slider-btn.next {
+    left: calc(50% + 8px) !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  .slider-btn.prev::before {
+    content: "‹";
+  }
+
+  .slider-btn.next::before {
+    content: "›";
+  }
+
+  .slider-btn:hover,
+  .slider-btn.prev:hover,
+  .slider-btn.next:hover {
+    transform: translateY(-2px) !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .single-product-gallery {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    margin-top: var(--nav-h, 70px) !important;
+    padding: 12px 0 16px !important;
+    background: #f7eee5 !important;
+  }
+
+  .single-product-image {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 58vh !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #f7eee5 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .slider-btn {
+    bottom: 72px !important;
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .slider-btn.prev {
+    left: calc(50% - 42px) !important;
+  }
+
+  .slider-btn.next {
+    left: calc(50% + 8px) !important;
+  }
+
+  .single-product-gallery {
+    margin-top: var(--nav-h, 62px) !important;
+    padding: 8px 0 12px !important;
+  }
+
+  .single-product-image {
+    max-height: 52vh !important;
+  }
+
+  .product-zoom-btn {
+    top: 14px !important;
+    right: 14px !important;
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 22px !important;
+  }
+}

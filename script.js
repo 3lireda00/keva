@@ -3,7 +3,7 @@
 const $ = id => document.getElementById(id);
 const $$ = sel => document.querySelectorAll(sel);
 
-const WHATSAPP_NUMBER = '201096169882';
+const WHATSAPP_NUMBER = '201039197703';
 
 function getCart() {
   return JSON.parse(localStorage.getItem('keva_cart') || '[]');
@@ -417,20 +417,18 @@ const PRODUCT_DETAILS = {
 
 
 const PRODUCT_CATALOG = {
-  'Asia': { image: 'photo/Asia.jpg', prices: { '30ml': 350, '50ml': 500, '100ml': 850 }, collection: 'Soft floral signature' },
-  'Caramel Mush': { image: 'photo/Caramel Mush.jpg', prices: { '30ml': 390, '50ml': 550, '100ml': 920 }, collection: 'Warm caramel gourmand' },
-  'La Belle': { image: 'photo men/La Belle.jpg', prices: { '30ml': 420, '50ml': 600, '100ml': 990 }, collection: 'Vanilla caramel elegance' },
-  'Latte Veil': { image: 'photo/Latte Veil.jpg', prices: { '30ml': 360, '50ml': 500, '100ml': 850 }, collection: 'Soft honey woods' },
-  'Marshmallow': { image: 'photo/Marshmallow.jpg', prices: { '30ml': 320, '50ml': 450, '100ml': 760 }, collection: 'Sweet musk fragrance' },
-  'Miss Gold': { image: 'photo/Miss Gold.jpg', prices: { '30ml': 450, '50ml': 650, '100ml': 1100 }, collection: 'Golden fruity caramel' },
-  'Mush Red': { image: 'photo/Mush Red.jpg', prices: { '30ml': 390, '50ml': 550, '100ml': 920 }, collection: 'Red fruits floral perfume' },
-  'Loup': { image: 'photo men/LOUP.png', prices: { '30ml': 430, '50ml': 620, '100ml': 1050 }, collection: 'Elegant warm fragrance' },
-  'Luana Dorée': { image: 'photo men/LUANA DORÉE.png', prices: { '30ml': 390, '50ml': 580, '100ml': 980 }, collection: 'Fresh floral citrus' },
-  'Luana DorÃ©e': { image: 'photo men/LUANA DORÉE.png', prices: { '30ml': 390, '50ml': 580, '100ml': 980 }, collection: 'Fresh floral citrus' },
-  'Oud Majesty': { image: 'photo men/OUD MAJESTY.png', prices: { '30ml': 470, '50ml': 690, '100ml': 1180 }, collection: 'Mysterious oud luxury' },
-  'Elixir': { image: 'photo men/Elixir.jpg', prices: { '30ml': 360, '50ml': 500, '100ml': 850 }, collection: 'Powerful woody amber' },
-  'Ligre Noir': { image: 'photo men/Ligre Noir.jpg', prices: { '30ml': 420, '50ml': 600, '100ml': 990 }, collection: 'Citrus marine woods' },
-  'Kofian': { image: 'photo men/Kofian.jpg', prices: { '30ml': 450, '50ml': 650, '100ml': 1100 }, collection: 'Coffee vanilla musk' }
+  'Asia': { image: 'photo/Asia.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Soft floral signature' },
+  'Caramel Mush': { image: 'photo/Caramel Mush.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Warm caramel gourmand' },
+  'La Belle': { image: 'photo men/La Belle.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Vanilla caramel elegance' },
+  'Latte Veil': { image: 'photo/Latte Veil.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Soft honey woods' },
+  'Marshmallow': { image: 'photo/Marshmallow.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Sweet musk fragrance' },
+  'Miss Gold': { image: 'photo/Miss Gold.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Golden fruity caramel' },
+  'Mush Red': { image: 'photo/Mush Red.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Red fruits floral perfume' },
+  'Loup': { image: 'photo men/LOUP.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Elegant warm fragrance' },
+  'Oud Majesty': { image: 'photo men/OUD MAJESTY.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Mysterious oud luxury' },
+  'Elixir': { image: 'photo men/Elixir.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Powerful woody amber' },
+  'Ligre Noir': { image: 'photo men/Ligre Noir.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Citrus marine woods' },
+  'Kofian': { image: 'photo men/Kofian.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Coffee vanilla musk' }
 };
 function getProductName(card) {
   const title = card?.querySelector('h3');
@@ -580,19 +578,6 @@ function addDetailsToBulkOrder() {
 
 function initProductDetails() {
   $$('.product-card').forEach(card => {
-    if (!card.querySelector('.details-btn')) {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'details-btn';
-      button.textContent = 'View Details';
-      button.addEventListener('click', event => {
-        event.stopPropagation();
-        openProductDetails(card);
-      });
-      const footer = card.querySelector('.card-footer');
-      if (footer) footer.insertBefore(button, footer.querySelector('.add-btn'));
-    }
-
     card.addEventListener('click', event => {
       if (event.target.closest('button, select, a, input, textarea')) return;
       openProductDetails(card);
@@ -866,3 +851,5 @@ function scrollFeedback(direction) {
     });
   }, { passive: true });
 })();
+
+
