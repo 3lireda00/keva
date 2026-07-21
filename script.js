@@ -38,10 +38,11 @@ function showToast(msg) {
 }
 
 function getProductPrices(card) {
+  const raw = card?.dataset?.prices || '{}';
   try {
-    return JSON.parse(card.dataset.prices || '{}');
+    return JSON.parse(raw.replace(/\\"/g, '"'));
   } catch {
-    return {};
+    return { '30ml': 299, '50ml': 499, '100ml': 799 };
   }
 }
 
@@ -373,7 +374,7 @@ const PRODUCT_DETAILS = {
     ingredients: 'Alcohol Denat, Parfum, Aqua, Limonene, Linalool, Coumarin, Eugenol, Benzyl Benzoate, Citral, BHT',
     description: 'A bold and addictive fragrance that blends fresh aromatic notes with rich vanilla warmth for a powerful and unforgettable trail.'
   },
-  'Tiger Noir': {
+  'Tigre Noir': {
     badge: 'Citrus Marine', rating: '4.8',
     top: 'Citrus notes, marine accord',
     middle: 'Amber',
@@ -428,10 +429,10 @@ const PRODUCT_CATALOG = {
   'Loup': { image: 'photo men/LOUP.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Elegant warm fragrance' },
   'Oud Majesty': { image: 'photo men/OUD MAJESTY.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Mysterious oud luxury' },
   'Elixir': { image: 'photo men/Elixir.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Powerful woody amber' },
-  'Ligre Noir': { image: 'photo men/Ligre Noir.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Citrus marine woods' },
+  'Tigre Noir': { image: 'photo men/Ligre Noir.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Citrus marine woods' },
   'Kofian': { image: 'photo men/Kofian.jpg', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Coffee vanilla musk' },
   'Soft fire': { image: 'photo/Soft fire.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Luxury fruity caramel scent' },
-  'vulcain': { image: 'photo men/Vulcain.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Spicy floral woody fragrance' }
+  'Vulcain': { image: 'photo men/Vulcain.png', prices: { '30ml': 399, '50ml': 649, '100ml': 1099 }, collection: 'Spicy floral woody fragrance' }
 
 };
 function getProductName(card) {
